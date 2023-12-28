@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  background-image: url(https://img.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg?w=1380&t=st=1703799020~exp=1703799620~hmac=5f1a86d1b47657d5d4424306c702e98913b2124f049cd21a9372406dad312347);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size:cover;
+}
+
+h1 {
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: rgba( 255, 255, 255, 0.35 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 3px );
+  -webkit-backdrop-filter: blur( 3px );
+  border-radius: 20px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+input {
+  margin-top: 20px;
+  border-radius: 10px;
+  outline: 2px solid #fff;
+  border: 0;
+  background-color: #ffffffc3;
+  outline-offset: 3px;
+  padding: 10px 1rem;
+  transition: 0.25s;
+}
+
+input:focus {
+  outline-offset: 5px;
+  background-color: #fff
+}
+
+#result {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+#result img {
+  margin-top: 10px;
+  width: 80%;
+}
+
+#result p {
+  font-size: 20px;
+}
+
+#result p:nth-child(4n){
+  margin-top: 20px;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+#prev {
+  max-width: 400px;
+  display: flex;
+  text-align: center;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+#prev img {
+  width: 50%;
+}
+
+.prevs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  flex: 0 0 auto;
+}
+
+.suns {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.sun {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sun:first-child{
+  margin-right: 10px;
+}
