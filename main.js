@@ -53,14 +53,20 @@ function displayWeather(data){
 }
 
 function displayHourlyForecast(hourlyData) {
+  prevision.innerHTML='';
+
   hourlyData.slice(0, 8).forEach(item => {
+    let classPrev = "prevs";
+    if(new Date().getHours() > new Date(item.dt * 1000).getHours()) {
+      classPrev += " oldDate";
+    }
     prevision.innerHTML += `
-    <div class="prevs">
+    <div class="${classPrev}">
       <span>${new Date(item.dt * 1000).getHours()}:00</span>
       <img src="https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png">
       <span>${Math.round(item.main.temp)}°C</span>
     </div>`
   });
-
-  console.log(hourlyData);
+  input.value = ""
+  input.blur();
 }
