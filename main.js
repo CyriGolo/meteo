@@ -37,17 +37,22 @@ input.addEventListener('keypress', function(key){
 function displayWeather(data){
   result.innerHTML = `
   <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png">
-  <h2>${Math.round(data.main.temp)}°C</h2>
-  <p>${data.weather[0].description}</p>
-  <p>${data.name}</p>
+  <h2>${Math.round(data.main.temp)}<span>°C</span></h2>
+  <p class="desc">${data.weather[0].description}</p>
   <div class="suns">
     <div class="sun">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 17h1m16 0h1M5.6 10.6l.7.7m12.1-.7l-.7.7M8 17a4 4 0 0 1 8 0M3 21h18M12 9V3l3 3M9 6l3-3"/></svg>
-      <p>${("0" + (new Date(data.sys.sunrise*1000).getHours())).slice(-2)}:${("0" + (new Date(data.sys.sunrise*1000).getMinutes())).slice(-2)}</p>
+      <div>
+        <p class="hour">${("0" + (new Date(data.sys.sunrise*1000).getHours())).slice(-2)}:${("0" + (new Date(data.sys.sunrise*1000).getMinutes())).slice(-2)}</p>
+        <p>Lever</p>
+      </div>
     </div>
     <div class="sun">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 17h1m16 0h1M5.6 10.6l.7.7m12.1-.7l-.7.7M8 17a4 4 0 0 1 8 0M3 21h18M12 3v6l3-3M9 6l3 3"/></svg>
-      <p>${("0" + (new Date(data.sys.sunset*1000).getHours())).slice(-2)}:${("0" + (new Date(data.sys.sunset*1000).getMinutes())).slice(-2)}</p>
+      <div>
+        <p class="hour">${("0" + (new Date(data.sys.sunset*1000).getHours())).slice(-2)}:${("0" + (new Date(data.sys.sunset*1000).getMinutes())).slice(-2)}</p>
+        <p>Coucher</p>
+      </div>
     </div>
   </div>`;
 }

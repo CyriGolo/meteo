@@ -33,6 +33,7 @@ h1 {
   -webkit-backdrop-filter: blur( 3px );
   border-radius: 20px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
+  transition: 0.25ms;
 }
 
 input {
@@ -56,14 +57,14 @@ input:focus {
   flex-direction: column;
   text-align: center;
   align-items: center;
+  width: 100%;
 }
 
 #result img {
   margin-top: 10px;
-  width: 80%;
 }
 
-#result p {
+.desc {
   font-size: 20px;
 }
 
@@ -79,12 +80,12 @@ input:focus {
   width: 7px;
 }
 
-*::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb:hover {
   border-radius: 5px;
   border: 2px solid #3fa9ff;
 }
 
-*::-webkit-scrollbar-thumb:hover {
+*::-webkit-scrollbar-thumb:active {
   border-radius: 5px;
   background-color: #3fa9ff;
 }
@@ -97,11 +98,20 @@ input:focus {
 
 h2 {
   font-size: 50px;
-  font-weight: 400;
+  font-weight: bold;
+}
+
+span {
+  font-size: 20px;
+  vertical-align: top;
+}
+
+.desc::first-letter {
+  text-transform: uppercase;
 }
 
 #prev {
-  max-width: 400px;
+  max-width: 320px;
   display: flex;
   text-align: center;
   overflow-x: scroll;
@@ -124,14 +134,30 @@ h2 {
 }
 
 .suns {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
   display: flex;
-  margin-bottom: 40px;
+  justify-content: space-around;
 }
 
 .sun {
   display: flex;
-  flex-direction: column;
+  text-align: start;
   align-items: center;
+}
+
+.sun svg {
+  width: 40px;
+  height: 100px;
+} 
+
+.hour {
+  font-size: 20px;
+}
+
+p {
+  font-size: 15px;
 }
 
 .sun:first-child{
